@@ -1,3 +1,11 @@
+## Release : 2017-12-09
+
+* 增加个人基本信息
+* 增加毕业学校信息
+* 增加最近一份工作信息
+* 增加一个项目信息
+
+
 ## How do I complete this project?
 
 1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
