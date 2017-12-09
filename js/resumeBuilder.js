@@ -50,6 +50,145 @@ var bio = {
 	}
  }
 
+
+
  bio.display()
+
+
+
+var education = {
+	schools: [
+	 	{
+	 		name: '暨南大学',
+	 		location: '广州',
+	 		degree: '本科',
+	 		majors: '计算机科学与技术',
+	 		dates: '2013年6月',
+	 		url: 'https://www.jnu.edu.cn/'
+	 	}
+	],
+
+	onlineCourses: [
+		{
+			title: '深度学习',
+			school: 'udacity',
+			date: '2017年6月',
+			url: 'udacity.com'
+		}
+	],
+
+	display: function() {
+		$('#education').append(HTMLschoolStart);
+
+		for (var i = 0; i < education.schools.length; i++) {
+			var school = education.schools[i];
+			var eduNam = HTMLschoolName.replace('%data%', school.name);
+			var eduLoc = HTMLschoolLocation.replace('%data%', school.location);
+			var eduDeg = HTMLschoolDegree.replace('%data%', school.degree);
+			var eduMaj = HTMLschoolMajor.replace('%data%', school.majors);
+			var eduDat = HTMLschoolDates.replace('%data%', school.dates);
+
+			$('.education-entry').append(eduNam + eduDeg);
+			$('.education-entry').append(eduDat);
+			$('.education-entry').append(eduMaj);
+			$('.education-entry').append(eduLoc);
+
+		}
+		
+		$('#education').append(HTMLonlineClasses);
+		$('#education').append(HTMLschoolStart);
+
+		for (var i = 0; i < education.onlineCourses.length; i++) {
+			var onCour = education.onlineCourses[i];
+
+			var onTit = HTMLonlineTitle.replace('%data%', onCour.title);
+			var onSch = HTMLonlineSchool.replace('%data%', onCour.school);
+			var onDat = HTMLonlineDates.replace('%data%', onCour.date);
+			var onUrl = HTMLonlineURL.replace('%data%', onCour.url);
+
+			$('.education-entry').last().append(onTit  +  onSch);
+			$('.education-entry').last().append(onDat);
+			$('.education-entry').last().append(onUrl);
+		}
+	}
+}
+
+education.display()
+
+
+var work = {
+	jobs : [
+		{
+			employer: '广州数说故事信息科技有限公司',
+			title: '数据挖掘工程师',
+			location: '广州黄埔大道西100号富力盈泰大厦A座703',
+			dates: '08/2015 - 至今',
+			description: '数据民工' 
+		}
+	],
+
+	display: function() {
+		$('#workExperience').append(HTMLworkStart);
+
+		for (var i = 0; i < this.jobs.length; i++) {
+			var job = this.jobs[i];
+
+			var jobEmp = HTMLworkEmployer.replace('%data%', job.employer);
+			var jobTit = HTMLworkTitle.replace('%data%', job.title);
+			var jobLoc = HTMLworkLocation.replace('%data%', job.location);
+			var jobDat = HTMLworkDates.replace('%data%', job.dates);
+			var jobDes = HTMLworkDescription.replace('%data%', job.description);
+
+			$('.work-entry').append(jobEmp + jobTit);
+			$('.work-entry').append(jobDat);
+			$('.work-entry').append(jobLoc);
+			$('.work-entry').append(jobDes);
+		}
+	}
+}
+
+work.display()
+
+
+var projects = {
+	projects: [
+		{
+			title: '数说立方',
+			dates: '08/2015 - 12/2015',
+			description: '大数据分析可视化平台',
+			images: 'http://datastory.com.cn/dist/cube.png?max_age=999999&46575d2fa7314cc320ebd664d7d94180'
+		}
+	],
+
+	display: function() {
+		$('#projects').append(HTMLprojectStart)
+
+		for (var i = 0; i < this.projects.length; i++) {
+			var poj = this.projects[i];
+
+			var pojTit = HTMLprojectTitle.replace('%data%', poj.title);
+			var pojDat = HTMLprojectDates.replace('%data%', poj.dates);
+			var pojDes = HTMLprojectDescription.replace('%data%', poj.description);
+			var pojImg = HTMLprojectImage.replace('%data%', poj.images);
+
+			$('.project-entry').append(pojTit)
+			$('.project-entry').append(pojDat)
+			$('.project-entry').append(pojDes)
+			$('.project-entry').append(pojImg)
+		}
+	}
+}
+
+projects.display()
+
+
+
+
+
+
+
+
+
+
 
 
